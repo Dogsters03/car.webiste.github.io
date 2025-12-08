@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NordicDrive – Tee vuokraus</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand">NordicDrive</h1>
+    <nav aria-label="Päänavigaatio">
+      <ul class="nav-list">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="catalog.html">Katalogi</a></li>
+        <li><a href="order.html" aria-current="page">Vuokraa</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container about">
+    <h2>Auton vuokraus – Tee tilaus</h2>
+    <p>Tällä lomakkeella voit lähettää vuokrauspyynnön. Täytä yhteystiedot, valitse auto ja vuokrausaika. Otamme sinuun yhteyttä vahvistuksen kanssa.</p>
+  </section>
+
+  <section class="container">
+
+    <form action="thanks.html" method="post" class="order-form">
+
+      <!-- Asiakastiedot -->
+      <fieldset>
+        <legend>Asiakastiedot</legend>
+
+        <div class="form-row">
+          <label for="fullname">Koko nimi</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Etunimi Sukunimi" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Sähköpostiosoite</label>
+          <input type="email" id="email" name="email" placeholder="nimi@esimerkki.fi" required />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Puhelinnumero</label>
+          <input type="tel" id="phone" name="phone" placeholder="+358 40 123 4567" 
+                 pattern="[0-9+\s()\-]{6,}" required />
+        </div>
+      </fieldset>
+
+      <!-- Vuokraustiedot -->
+      <fieldset>
+        <legend>Vuokraustiedot</legend>
+
+        <div class="form-row">
+          <label for="car">Valitse auto</label>
+          <select id="car" name="car" required>
+            <option value="">— Valitse auto —</option>
+            <option value="city-compact">City Compact</option>
+            <option value="family-cruiser">Family Cruiser</option>
+            <option value="adventure-suv">Adventure SUV</option>
+            <option value="executive-sedan">Executive Sedan</option>
+            <option value="eco-electric">Eco Electric</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="startdate">Aloituspäivämäärä</label>
+          <input type="date" id="startdate" name="startdate" required />
+        </div>
+
+        <div class="form-row">
+          <label for="enddate">Päättymispäivämäärä</label>
+          <input type="date" id="enddate" name="enddate" required />
+        </div>
+
+        <div class="form-row">
+          <label for="quantity">Auton määrä</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" />
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Lisätiedot</label>
+          <textarea id="notes" name="notes" rows="5" placeholder="Erityistoiveet, lisävarusteet jne."></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Hyväksynnät -->
+      <fieldset>
+        <legend>Hyväksynnät</legend>
+
+        <div class="form-row checkbox-row">
+          <input type="checkbox" id="agree" name="agree" required />
+          <label for="agree">Hyväksyn vuokrausehdot ja tietosuojakäytännön</label>
+        </div>
+
+        <div class="form-row checkbox-row">
+          <input type="checkbox" id="newsletter" name="newsletter" />
+          <label for="newsletter">Tilaan uutiskirjeen (valinnainen)</label>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Lähetä vuokrauspyyntö</button>
+      </div>
+
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 NordicDrive Autovuokraamo</p>
+    <ul class="footer-links">
+      <li><a href="#">Tietosuojaseloste</a></li>
+      <li><a href="#">Käyttöehdot</a></li>
+      <li><a href="#">Evästekäyttö</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
